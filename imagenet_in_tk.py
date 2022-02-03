@@ -4,9 +4,14 @@ from tkinter import font
 from PIL import Image, ImageTk, ImageDraw, ImageFont
 import time
 import numpy as np
-import keras
-from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input, decode_predictions
-from tensorflow.keras.preprocessing import image
+
+import tensorflow as tf
+if int(tf.__version__.split('.')[0]) >= 2:
+    from tensorflow import keras
+else:
+    import keras
+from keras.applications.vgg16 import VGG16, preprocess_input, decode_predictions
+from keras.preprocessing import image
 import json
 import os
 
